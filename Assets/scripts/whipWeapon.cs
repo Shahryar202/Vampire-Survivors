@@ -38,12 +38,13 @@ public class whipWeapon : MonoBehaviour
         {
             rightWhipsGameObject.SetActive(true);
             Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipsGameObject.transform.position, whipAttackSize, 0f);
+            ApplyDamage(colliders);
         }
         else
         {
             leftWhipsGameObject.SetActive(true);
             Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipsGameObject.transform.position, whipAttackSize, 0f);
-
+            ApplyDamage(colliders);
         }
     }
 

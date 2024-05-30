@@ -17,4 +17,18 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
     }
+
+    public void Heal(int amount)
+    {
+        if (currentHp <= 0)
+        {
+            return;
+        }
+
+        currentHp += amount;
+        if (currentHp > maxHp)
+        {
+            currentHp = maxHp;
+        }
+    }
 }

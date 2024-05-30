@@ -7,7 +7,7 @@ using UnityEngine.Timeline;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Transform targetDesitination;
+    Transform targetDesitination;
     private GameObject targetGameObject;
     Character targetCharacter;
     
@@ -20,9 +20,14 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rigidBody2d = GetComponent<Rigidbody2D>();
-        targetGameObject = targetDesitination.gameObject;
+        //targetGameObject = targetDesitination.gameObject;
     }
 
+    public void SetTarget(GameObject target)
+    {
+        targetGameObject = target;
+        targetDesitination = target.transform;
+    }
     private void FixedUpdate()
     {
         Vector3 direction = (targetDesitination.position - transform.position).normalized;
@@ -33,7 +38,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject == targetGameObject)
         {
-            Debug.Log("attack detected");
+            //Debug.Log("attack detected");
             Attack();    
         }
     }
