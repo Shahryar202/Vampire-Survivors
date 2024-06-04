@@ -7,7 +7,7 @@ using UnityEngine.Timeline;
 
 public class Enemy : MonoBehaviour
 {
-    Transform targetDesitination;
+    [SerializeField] Transform targetDesitination;  //SerializedField added by shahryar
     private GameObject targetGameObject;
     Character targetCharacter;
     

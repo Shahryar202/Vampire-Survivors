@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Page : MonoBehaviour
 {
     private int a = 1;
@@ -32,7 +33,7 @@ public class Page : MonoBehaviour
         else if(b==1){
             example.ti();
             ResumeTimer();
-            transform.position = transform.position + new Vector3(-2*Screen.width , 0, 0);
+            StartGameplay();
         }
         else if(b==6){
             PauseTimer();
@@ -54,6 +55,11 @@ public class Page : MonoBehaviour
             transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
         }
     }
+
+    public void StartGameplay(){
+        SceneManager.LoadScene("GamePlay");
+    }
+
     private bool isPaused = false;
     private void PauseTimer()
     {
