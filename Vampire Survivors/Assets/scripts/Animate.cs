@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Animate : MonoBehaviour
 {
-    private Animator animator;
+    Animator animator;
 
     public float horizontal;
     private void Awake()

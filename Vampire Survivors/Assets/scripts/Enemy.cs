@@ -13,8 +13,8 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private float speed;
     private Rigidbody2D rigidBody2d;
-    [SerializeField] private int hp = 200;
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int hp = 50;
+    [SerializeField] private int damage = 1;
 
 
     private void Awake()
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
+        Debug.Log("attack detected");
         if (targetCharacter == null)
         {
             targetCharacter = targetGameObject.GetComponent<Character>();

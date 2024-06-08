@@ -29,6 +29,7 @@ public class EnemiesManager : MonoBehaviour
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.transform.parent = transform;
     }
 
     private Vector3 GenerateRandomPosition()
