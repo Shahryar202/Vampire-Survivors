@@ -1,81 +1,59 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class Page : MonoBehaviour
+public class PAGE : MonoBehaviour
 {
-    private int a = 1;
-    public Timer example;
-    void Start()
-    {
-        example = GetComponent<Timer>();
-    }
+    private int a = 10;
     public void NavigateToPage(int b){
-        if(a==10&&b==0){
+        if(b==10 && a==10){
             transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
         }
-        else if(a==20&&b==0){
+        else if(b==20 && a==10){
+            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
+        }
+        else if(b==30 && a==10){
+            transform.position = transform.position + new Vector3(2*Screen.width , 0, 0);
+        }
+        else if(b==40){
+            transform.position = transform.position + new Vector3(2*Screen.width , 0, 0);
+            a = 50;
+        }
+        else if(b==50){
+            transform.position = transform.position + new Vector3(3*Screen.width , 0, 0);
+            a = 60;
+        }
+        else if(b==60){
+            transform.position = transform.position + new Vector3(4*Screen.width , 0, 0);
+            a = 70;
+        }
+        else if(b==20 && a==50){
             transform.position = transform.position + new Vector3(-2*Screen.width , 0, 0);
         }
-        else if(b==3){
+        else if(b==20 && a==60){
+            transform.position = transform.position + new Vector3(-3*Screen.width , 0, 0);
+        }
+        else if(b==20 && a==70){
+            transform.position = transform.position + new Vector3(-4*Screen.width , 0, 0);
+        }
+        else if(b==70){
+            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
+        }
+        else if(b==80){
             transform.position = transform.position + new Vector3(+2*Screen.width , 0, 0);
-            a = 20;
         }
-        else if(b==2){
-            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
-            a = 10;
-        }
-        else if(b==4){
-            example.to();
-            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
-        }
-        else if(b==1){
-            example.ti();
-            ResumeTimer();
-            StartGameplay();
-        }
-        else if(b==6){
-            PauseTimer();
-            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
-        }
-        else if(b==5){
-            ResumeTimer();
+        else if(b==90){
             transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
         }
-        else if(b==7){
-            example.ti();
-            ResumeTimer();
-            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
+        else if(b==100){
+            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
+            a=100;
         }
-        else if(b==8){
+        else if(b==110 && a==100){
+            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
+            a=80;
+        }
+        else if(b==110 && a!=100){
             transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
         }
-        else if(b==9){
-            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
-        }
-    }
-
-    public void StartGameplay(){
-        SceneManager.LoadScene("GamePlay");
-    }
-
-    private bool isPaused = false;
-    private void PauseTimer()
-    {
-        isPaused = true;
-        Time.timeScale = 0f;
-    }
-    private void ResumeTimer()
-    {
-        isPaused = false;
-        Time.timeScale = 1f;
     }
 }
-//0return option 10
-//1start menu 1
-//2option menu 1
-//3option pause 30
-//4quit pause 30
-//5resume pause 30
-//6pause game 20
