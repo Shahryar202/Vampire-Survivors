@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 public class ForthF : MonoBehaviour
 {
     public TMP_InputField Password;
@@ -71,7 +72,7 @@ public class ForthF : MonoBehaviour
                         Debug.LogError("Error reading the file: " + e.Message);
                         }
                         if(PassFile == Password.text){
-                            transform.position = transform.position + new Vector3(-6*Screen.width, 0, 0);
+                            Menu2();
                         }
                         else{
                             audioSource10.Play();
@@ -87,5 +88,8 @@ public class ForthF : MonoBehaviour
         string pattern = "\\b([0-9a-zA-Z]){5,15}\\b";
         Regex regex = new Regex(pattern);
         return regex.IsMatch(s1);
+    }
+    public void Menu2(){
+        SceneManager.LoadScene("Menu");
     }
 }

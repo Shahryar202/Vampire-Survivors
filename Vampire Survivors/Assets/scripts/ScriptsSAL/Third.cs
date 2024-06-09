@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.IO;
 using TMPro;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 public class ThirdT : MonoBehaviour
 {
     public TMP_InputField UserName;
@@ -26,12 +27,15 @@ public class ThirdT : MonoBehaviour
                 writer.WriteLine(s1);
             }
             Output.text = "Finished";
-            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
+            Menu3();
         }
     }
     private bool booliii(string s1){
         string pattern = "\\b([0-9a-zA-Z]){10,15}\\b";
         Regex regex = new Regex(pattern);
         return regex.IsMatch(s1);
+    }
+    public void Menu3(){
+        SceneManager.LoadScene("Menu");
     }
 }
