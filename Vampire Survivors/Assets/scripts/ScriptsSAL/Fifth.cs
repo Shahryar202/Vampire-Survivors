@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class Fifth : MonoBehaviour
 {
     public TMP_InputField Pass;
@@ -44,7 +45,7 @@ public class Fifth : MonoBehaviour
                                 }
                                 File.WriteAllLines(filePath2, previousLines);
                                 }
-                                transform.position = transform.position + new Vector3(-7*Screen.width, 0, 0);
+                                Menu1();
                 }
             }
         }
@@ -53,5 +54,8 @@ public class Fifth : MonoBehaviour
         string pattern = "\\b([0-9a-zA-Z]){5,15}\\b";
         Regex regex = new Regex(pattern);
         return regex.IsMatch(s1);
+    }
+    public void Menu1(){
+        SceneManager.LoadScene("Menu");
     }
 }

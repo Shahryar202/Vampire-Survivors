@@ -38,22 +38,5 @@ public class PAGE : MonoBehaviour
         else if(b==70){
             transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
         }
-        else if(b==80){
-            transform.position = transform.position + new Vector3(+2*Screen.width , 0, 0);
-        }
-        else if(b==90){
-            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
-        }
-        else if(b==100){
-            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
-            a=100;
-        }
-        else if(b==110 && a==100){
-            transform.position = transform.position + new Vector3(-Screen.width , 0, 0);
-            a=80;
-        }
-        else if(b==110 && a!=100){
-            transform.position = transform.position + new Vector3(+Screen.width , 0, 0);
-        }
     }
 }

@@ -5,6 +5,6 @@ using UnityEngine;
 public class AboutUs : MonoBehaviour
 {
     public void OnClick(){
-        transform.position = transform.position + new Vector3(-2*Screen.width , 0, 0);
+        transform.position = transform.position + new Vector3(-1*Screen.width , 0, 0);
     }
 }
