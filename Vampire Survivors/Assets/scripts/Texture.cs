@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
-
-public class Textture : MonoBehaviour
+public class Texture : MonoBehaviour
 {
     public string[] texts = {
         "Hi Guys It is Us",
@@ -20,18 +19,15 @@ public class Textture : MonoBehaviour
         "And We Do Our Best To help You",
         "Thank You"
     };
-
     public float changeInterval = 1f;
     public TextMeshProUGUI textField;
     private int currentIndex = 0;
     private float timer = 0f;
     private bool showTextsInOrder = false;
-
     void Start()
     {
         ShowTextsInOrder();
     }
-
     void ShowTextsInOrder()
     {
         currentIndex = 0;
@@ -39,7 +35,6 @@ public class Textture : MonoBehaviour
         showTextsInOrder = true;
         timer = 0f;
     }
-
     void Update()
     {
         if (showTextsInOrder)
@@ -52,7 +47,6 @@ public class Textture : MonoBehaviour
             }
         }
     }
-
     void ChangeText()
     {
         currentIndex = (currentIndex + 1) % texts.Length;
@@ -60,7 +54,6 @@ public class Textture : MonoBehaviour
         if (currentIndex == texts.Length - 1)
             showTextsInOrder = false;
     }
-
     public void RestartTextDisplay()
     {
         ShowTextsInOrder();
