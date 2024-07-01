@@ -21,12 +21,22 @@ public class ThirdT : MonoBehaviour
             Output.text = "Your UserName is Undefined Please Make its Structure";
         }
         else{
-            string filePath = "D:/projects/MyProj/Assets/TextFilesUi/username.txt";
+            string filePath = "C:/GameTxtFiles/username.txt";
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 writer.WriteLine(s1);
             }
             Output.text = "Finished";
+
+
+            //
+            string fileName22 = "C:\\GameTxtFiles\\user2.txt";
+            WriteStringToFile(s1, fileName22);
+            //
+
+
+
+
             Menu3();
         }
     }
@@ -38,4 +48,27 @@ public class ThirdT : MonoBehaviour
     public void Menu3(){
         SceneManager.LoadScene("Menu");
     }
+
+
+
+
+    //
+    void WriteStringToFile(string content, string fileName)
+    {
+        // مسیر کامل فایل
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+
+        // نوشتن رشته در فایل
+        using (StreamWriter writer = new StreamWriter(path, false))
+        {
+            writer.Write(content);
+        }
+
+        Debug.Log($"رشته در فایل {fileName} ذخیره شد: {path}");
+    }
+    //
+
+
+
+
 }

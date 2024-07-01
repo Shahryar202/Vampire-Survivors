@@ -27,7 +27,7 @@ public class ForthF : MonoBehaviour
         else{
             string PassFile = "";
             int linenumber = -1;
-            string filePath = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\loop.txt";
+            string filePath = "C:\\GameTxtFiles\\loop.txt";
             string firstLine = "";
             if (File.Exists(filePath)){
                 try
@@ -39,7 +39,7 @@ public class ForthF : MonoBehaviour
                 Debug.LogError("Error reading the file: " + e.Message);
                 }
                 if (!string.IsNullOrEmpty(firstLine)){
-                string filePath2 = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\emails.txt";
+                string filePath2 = "C:\\GameTxtFiles\\emails.txt";
                 if(File.Exists(filePath2))
                 {
                     try
@@ -50,7 +50,7 @@ public class ForthF : MonoBehaviour
                             if (searchLines[j].Contains(firstLine))
                             {
                                 linenumber = j + 1;
-                                string filePath5 = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\line.txt";
+                                string filePath5 = "C:\\GameTxtFiles\\line.txt";
                                 using (StreamWriter writer = new StreamWriter(filePath5))
                                 {
                                 writer.WriteLine(linenumber);
@@ -62,7 +62,7 @@ public class ForthF : MonoBehaviour
                     catch(IOException e){
                     Debug.LogError("Error reading the file: " + e.Message);
                     }
-                    string filePath3 = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\Password.txt";
+                    string filePath3 = "C:\\GameTxtFiles\\password.txt";
                     if(File.Exists(filePath3)){
                         try
                         {
@@ -72,6 +72,23 @@ public class ForthF : MonoBehaviour
                         Debug.LogError("Error reading the file: " + e.Message);
                         }
                         if(PassFile == Password.text){
+
+
+
+                            
+
+
+
+                            string filePath44 = "C:\\GameTxtFiles\\username.txt";
+                            string linne = Read(filePath44, linenumber);
+                            string fileName22 = "C:\\GameTxtFiles\\user2.txt";
+                            WriteStringToFile(linne, fileName22);
+
+
+
+
+
+
                             Menu2();
                         }
                         else{
@@ -92,4 +109,58 @@ public class ForthF : MonoBehaviour
     public void Menu2(){
         SceneManager.LoadScene("Menu");
     }
+
+
+
+
+
+
+
+
+
+    string Read(string filePath, int lineNumber){
+        if(File.Exists(filePath)){
+            try{
+                using(StreamReader reader = new StreamReader(filePath))
+                {
+                    for(int i=1; i<lineNumber; i++){
+                        if(reader.ReadLine() == null){
+                            return "AAAA";
+                        }
+                    }
+                    return reader.ReadLine();
+                }
+            }
+            catch(System.Exception e){
+                
+                Debug.LogError(e.Message);
+                return null;
+            }
+        }
+        else{
+            return "AAAA";
+        }
+    }
+    void WriteStringToFile(string content, string fileName)
+    {
+        // مسیر کامل فایل
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+
+        // نوشتن رشته در فایل
+        using (StreamWriter writer = new StreamWriter(path, false))
+        {
+            writer.Write(content);
+        }
+
+        Debug.Log($"رشته در فایل {fileName} ذخیره شد: {path}");
+    }
+
+
+
+
+
+
+
+
+
 }

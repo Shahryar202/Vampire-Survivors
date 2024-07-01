@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Linq;
@@ -23,11 +24,11 @@ public class Fifth : MonoBehaviour
             Output.text = "Your Password is Undefined Please Make its Structure";
         }
         else{
-            string filePath = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\line.txt";
+            string filePath = "C:\\GameTxtFiles\\line.txt";
             if(File.Exists(filePath)){
                 string fileContent = File.ReadAllText(filePath);
                 if (int.TryParse(fileContent, out int lineNumber)){
-                    string filePath2 = "D:\\projects\\MyProj\\Assets\\TextFilesUi\\Password.txt";  
+                    string filePath2 = "C:\\GameTxtFiles\\password.txt";
                             if (File.Exists(filePath2))
                                 {
                                 string[] lines = File.ReadAllLines(filePath2);
@@ -45,6 +46,26 @@ public class Fifth : MonoBehaviour
                                 }
                                 File.WriteAllLines(filePath2, previousLines);
                                 }
+
+
+
+
+
+
+                                string filePath44 = "C:\\GameTxtFiles\\username.txt";
+                                string linne = Read(filePath44, lineNumber);
+                                string fileName22 = "C:\\GameTxtFiles\\user2.txt";
+                                WriteStringToFile(linne, fileName22);
+
+
+
+
+
+
+
+
+
+
                                 Menu1();
                 }
             }
@@ -58,4 +79,56 @@ public class Fifth : MonoBehaviour
     public void Menu1(){
         SceneManager.LoadScene("Menu");
     }
+
+
+
+
+
+
+
+
+
+    string Read(string filePath, int lineNumber){
+        if(File.Exists(filePath)){
+            try{
+                using(StreamReader reader = new StreamReader(filePath))
+                {
+                    for(int i=1; i<lineNumber; i++){
+                        if(reader.ReadLine() == null){
+                            return "AAAA";
+                        }
+                    }
+                    return reader.ReadLine();
+                }
+            }
+            catch(System.Exception e){
+                
+                Debug.LogError(e.Message);
+                return null;
+            }
+        }
+        else{
+            return "AAAA";
+        }
+    }
+    void WriteStringToFile(string content, string fileName)
+    {
+        // مسیر کامل فایل
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+
+        // نوشتن رشته در فایل
+        using (StreamWriter writer = new StreamWriter(path, false))
+        {
+            writer.Write(content);
+        }
+
+        Debug.Log($"رشته در فایل {fileName} ذخیره شد: {path}");
+    }
+
+
+
+
+
+
+
 }
