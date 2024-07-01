@@ -30,15 +30,15 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 direction = (targetDesitination.position - transform.position).normalized;
-        rigidBody2d.velocity = direction * speed;
+        Vector3 direction = (targetDesitination.position - transform.position).normalized; //the direction of the enemy we subtract the position of the character from the target position
+        //normalized is the vector with length of 1 but with same direction
+        rigidBody2d.velocity = direction * speed; //setting the speed of the enemy
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject == targetGameObject)
         {
-            //Debug.Log("attack detected");
             Attack();    
         }
     }

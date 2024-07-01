@@ -10,12 +10,12 @@ public class Animate : MonoBehaviour
     public float horizontal;
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>(); //storing the reference to animate
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Horizontal", horizontal); //here we are passing the horizontal value to the animator
     }
 }

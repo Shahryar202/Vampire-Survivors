@@ -32,7 +32,7 @@ public class EnemiesManager : MonoBehaviour
         newEnemy.transform.parent = transform;
     }
 
-    private Vector3 GenerateRandomPosition()
+    private Vector3 GenerateRandomPosition() //this function make the bats be created out of the camera box
     {
         Vector3 position = new Vector3();
         float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
