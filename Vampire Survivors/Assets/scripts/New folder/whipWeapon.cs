@@ -6,14 +6,9 @@ using UnityEngine;
 
 public class whipWeapon : MonoBehaviour
 {
-<<<<<<< Updated upstream:Vampire Survivors/Assets/scripts/New folder/whipWeapon.cs
     [SerializeField] public AudioSource sound;
     [SerializeField] private float timeToAttack = 4f;
     private float timer;
-=======
-    [SerializeField] private float timeToAttack = 4f; //the time it need to attack
-    private float timer; //timer
->>>>>>> Stashed changes:Assets/scripts/whipWeapon.cs
 
     [SerializeField] private GameObject leftWhipsGameObject;
     [SerializeField] private GameObject rightWhipsGameObject;
