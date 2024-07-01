@@ -29,7 +29,6 @@ public class whipWeapon : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
         timer -= Time.deltaTime;//calculating time
         if (timer < 0f)
         {
