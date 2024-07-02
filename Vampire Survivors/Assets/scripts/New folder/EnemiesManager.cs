@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3;
+    [SerializeField] private GameObject enemy4;
+
 
     [SerializeField] private Vector2 spawnArea;
     [SerializeField] private float spawnTimer;
@@ -15,9 +18,12 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private float spawnTimer3;
 
     [SerializeField] private GameObject player;
+    private int numberOfBats = 20;
+    private int numOfBatWave = 40;
     private float timer;
     private float timer2;
     private float timer3;
+
 
     
     private void Update()
@@ -26,6 +32,17 @@ public class EnemiesManager : MonoBehaviour
         if (timer >= spawnTimer)
         {
             SpawnEnemy();
+            numberOfBats--;
+            numOfBatWave--;
+            if(numberOfBats == 0){
+                SpawnGhool();
+            }
+            if(numOfBatWave == 0){
+                for(int i=0 ; i<15 ; i++){
+                    SpawnEnemy();
+                }
+                numOfBatWave = 40;
+            }
             timer = 0f;
         }
 
@@ -72,6 +89,17 @@ public class EnemiesManager : MonoBehaviour
 
         position += player.transform.position;
         GameObject newEnemy = Instantiate(enemy3);
+        newEnemy.transform.position = position;
+        newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.transform.parent = transform;
+    }
+
+    private void SpawnGhool()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+        GameObject newEnemy = Instantiate(enemy4);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;
