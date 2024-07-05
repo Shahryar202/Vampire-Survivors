@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,9 +17,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int hp = 50;
     [SerializeField] private int damage = 1;
 
+    [SerializeField] private GameObject experience;
+    [SerializeField] private GameObject health;
+
+    EnemyNumber count;
+    
 
     private void Awake()
     {
+        count = GameObject.FindWithTag("counter").GetComponent<EnemyNumber>();
         rigidBody2d = GetComponent<Rigidbody2D>();
         //targetGameObject = targetDesitination.gameObject;
     }
@@ -45,7 +52,6 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("attack detected");
         if (targetCharacter == null)
         {
             targetCharacter = targetGameObject.GetComponent<Character>();
@@ -58,7 +64,18 @@ public class Enemy : MonoBehaviour
         hp -= damage;
         if (hp < 1)
         {
+
             Destroy(gameObject);
+            System.Random random = new System.Random();
+            int randomIntMax = random.Next(10); // Range: 0 to 9
+
+            if(randomIntMax >= 8){
+                health.GetComponent<Health>().Spawn(transform.position, Quaternion.identity);
+            }
+            else{
+                experience.GetComponent<Experience>().Spawn(transform.position, Quaternion.identity);
+            }
+            count.numberOfKills(1);
         }
     }
 }

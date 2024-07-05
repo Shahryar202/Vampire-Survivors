@@ -54,8 +54,9 @@ public class Fifth : MonoBehaviour
 
                                 string filePath44 = "C:\\GameTxtFiles\\username.txt";
                                 string linne = Read(filePath44, lineNumber);
+                                string[] parts123 = linne.Split(":");
                                 string fileName22 = "C:\\GameTxtFiles\\user2.txt";
-                                WriteStringToFile(linne, fileName22);
+                                WriteStringToFile(parts123[0], fileName22);
 
 
 

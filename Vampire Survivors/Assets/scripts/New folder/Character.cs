@@ -10,12 +10,8 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHp -= damage;
-        if (currentHp <= 0)
-        {
-            Debug.Log("character is dead GAME OVER");
-        }
-        hpBar.SetState(currentHp, maxHp);
+
+        hpBar.SetDamageState(damage, maxHp);
     }
 
     public void Heal(int amount)

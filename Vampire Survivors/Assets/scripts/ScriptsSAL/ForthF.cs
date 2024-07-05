@@ -81,8 +81,9 @@ public class ForthF : MonoBehaviour
 
                             string filePath44 = "C:\\GameTxtFiles\\username.txt";
                             string linne = Read(filePath44, linenumber);
+                            string[] partss = linne.Split(":");
                             string fileName22 = "C:\\GameTxtFiles\\user2.txt";
-                            WriteStringToFile(linne, fileName22);
+                            WriteStringToFile(partss[0], fileName22);
 
 
 

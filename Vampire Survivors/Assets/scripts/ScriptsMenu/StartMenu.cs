@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public void OnClick(){
-        startGamePlay();
+        transform.position = transform.position + new Vector3(-3*Screen.width , 0, 0);
+
     }
 
-    public void startGamePlay(){
-        SceneManager.LoadScene("GamePlay");
-    }
 }

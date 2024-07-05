@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8721598763510505780}
   m_Layer: 0
   m_Name: Ghool
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.85, y: 0}
+  m_Offset: {x: -0.6, y: -0.79}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 3}
+  m_Size: {x: 1.74, y: 1.39}
   m_EdgeRadius: 0
 --- !u!50 &5287211686297878964
 Rigidbody2D:
@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetDesitination: {fileID: 0}
-  speed: 0.5
+  speed: 0.8
   hp: 5000
   damage: 100
+  experience: {fileID: 7329736608578597964, guid: dafb7d4276d4f914097a429dc0d2f3ca, type: 3}
+  health: {fileID: 5667926517136374318, guid: e39488d59fc0357419d1845122073596, type: 3}

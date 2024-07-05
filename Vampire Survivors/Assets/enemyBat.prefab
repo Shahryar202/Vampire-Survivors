@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8205095148809558884}
   m_Layer: 0
   m_Name: enemyBat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,3 +197,5 @@ MonoBehaviour:
   speed: 2.5
   hp: 50
   damage: 1
+  experience: {fileID: 7329736608578597964, guid: dafb7d4276d4f914097a429dc0d2f3ca, type: 3}
+  health: {fileID: 5667926517136374318, guid: e39488d59fc0357419d1845122073596, type: 3}
