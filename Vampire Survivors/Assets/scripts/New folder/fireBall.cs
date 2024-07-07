@@ -8,11 +8,11 @@ public class fireBall : MonoBehaviour
     [SerializeField] float timeToAttack;
     float timer;
     [SerializeField] GameObject FireBall;
-    playerMovement playerMove;
+    playerMovement2 playerMove;
     [SerializeField] public AudioSource sound;
 
     private void Awake(){
-        playerMove = GetComponentInParent<playerMovement>();
+        playerMove = GetComponentInParent<playerMovement2>();
     }
 
     private void Update(){

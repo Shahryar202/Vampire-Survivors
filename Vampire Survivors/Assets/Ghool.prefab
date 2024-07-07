@@ -197,5 +197,5 @@ MonoBehaviour:
   speed: 0.8
   hp: 5000
   damage: 100
-  experience: {fileID: 7329736608578597964, guid: dafb7d4276d4f914097a429dc0d2f3ca, type: 3}
+  experience: {fileID: 7329736608578597964, guid: 6778466e9c743ba439e7b62bd9aad45b, type: 3}
   health: {fileID: 5667926517136374318, guid: e39488d59fc0357419d1845122073596, type: 3}

@@ -20,7 +20,7 @@ public class SecondS : MonoBehaviour
             Output.text = "Your Password is Undefined Please Make its Structure";
         }
         else{
-            string filePath = "D:/projects/MyProj/Assets/TextFilesUi/password.txt";
+            string filePath = "C:/GameTxtFiles/password.txt";
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 writer.WriteLine(s1);

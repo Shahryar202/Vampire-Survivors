@@ -26,8 +26,8 @@ public class FirstF : MonoBehaviour
         }
         else
         {
-            string filePath = "D:/projects/MyProj/Assets/TextFilesUi/emails.txt";
-            string filePath2 = "D:/projects/MyProj/Assets/TextFilesUi/loop.txt";
+            string filePath = "C:/GameTxtFiles/emails.txt";
+            string filePath2 = "C:/GameTxtFiles/loop.txt";
             string[] emails = File.ReadAllLines(filePath);
             bool foundMatch = false;
             foreach (string email in emails)

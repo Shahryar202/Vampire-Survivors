@@ -15,7 +15,7 @@ public class playerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
     
-    [SerializeField] private float speed = 3f; //the speed of the player movement We can change is it from unity
+    [SerializeField] public float speed ; //the speed of the player movement We can change is it from unity
     Animate animate;
     private void Awake()
     {

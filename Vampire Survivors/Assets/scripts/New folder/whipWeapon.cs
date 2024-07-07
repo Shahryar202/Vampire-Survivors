@@ -15,7 +15,7 @@ public class whipWeapon : MonoBehaviour
 
     private playerMovement playerMove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
-    [SerializeField] int whipDamage = 2;
+    [SerializeField] public int whipDamage = 70;
     
     private void Awake()
     {

@@ -9,21 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/UI.unity
     guid: bfc15ae141a719640b9debde67245daf
   - enabled: 1
+    path: Assets/Scenes/trailer.unity
+    guid: b873d8accb3caf94bb3ac750bd372338
+  - enabled: 1
+    path: Assets/Scenes/SAL.unity
+    guid: c3ecd72d25b67db4d84cfa7d31cf5a6a
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 04b76e96133868b4fb78168cf38639c6
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 49778bed442f98b4599db94d670bb3c5
+    path: Assets/Scenes/GamePlay2.unity
+    guid: a38478e17bafb494e9acd5f34726ec8b
+  - enabled: 1
+    path: Assets/Scenes/File3.unity
+    guid: fb1f1caa47cfc524780e6e67ba86a0b7
   - enabled: 1
     path: Assets/Scenes/File2.unity
     guid: 94850360104dc3440a9d38d56d348f7b
   - enabled: 1
     path: Assets/Scenes/File.unity
     guid: bab26c404ab4dc94e8460a58c9d6e042
-  - enabled: 1
-    path: Assets/Scenes/SAL.unity
-    guid: c3ecd72d25b67db4d84cfa7d31cf5a6a
   m_configObjects: {}

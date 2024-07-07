@@ -7,8 +7,7 @@ public class ThrowingFireBall : MonoBehaviour
 {
     private Vector3 direction;
     [SerializeField] private float speed;
-    [SerializeField] int damage;
-    bool hitDetected = false;
+    public int damage = 50;
 
     public void SetDirection(float dir_x, float dir_y)
     {
@@ -28,7 +27,7 @@ public class ThrowingFireBall : MonoBehaviour
     }    
         private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        Enemy2 enemy = collision.GetComponent<Enemy2>();
         if (collision.gameObject.CompareTag("Enemy")) {
             Destroy(gameObject);
             enemy.TakeDamege(damage);
